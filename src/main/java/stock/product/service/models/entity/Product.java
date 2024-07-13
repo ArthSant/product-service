@@ -9,6 +9,7 @@ import lombok.Setter;
 import stock.product.service.models.dto.product.ProductDTO;
 
 @Entity
+@Table(name = "products")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -21,16 +22,19 @@ public class Product {
     @Column(length = 80)
     private String name;
 
-   /* @OneToOne
+    @OneToOne
     @JoinColumn(referencedColumnName = "name")
     private Department department;
-*/
+
+    @OneToOne
+    @JoinColumn(referencedColumnName = "cnpj")
+    private Producer producer;
+
     private Integer quantity;
 
     public Product(ProductDTO dto, Department department) {
-      //  this.department = department;
+        this.department = department;
         this.name = dto.getName();
-
     }
 
 }
