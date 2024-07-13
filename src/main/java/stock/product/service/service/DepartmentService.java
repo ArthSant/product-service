@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import stock.product.service.models.dto.department.DepartmentDTO;
 import stock.product.service.models.entity.Department;
 import stock.product.service.repository.DepartmentRepository;
+import stock.product.service.util.Mapper;
 
 import java.util.List;
 
@@ -13,15 +14,16 @@ import java.util.List;
 @AllArgsConstructor
 public class DepartmentService {
     private final DepartmentRepository departmentRepository;
+    private final Mapper mapper;
 
     @Transactional
     public void createDepartment(DepartmentDTO dto) {
-        Department department = new Department(dto);
+        Department department = mapper.map(dto, Department.class);
         departmentRepository.save(department);
    }
 
    public List<DepartmentDTO> getAllDepartments() {
         List<Department> departmentList = departmentRepository.findAll();
-       return departmentList.stream().map(DepartmentDTO::new).toList();
+       return mapper.mapList(departmentList, DepartmentDTO.class);
    }
 }

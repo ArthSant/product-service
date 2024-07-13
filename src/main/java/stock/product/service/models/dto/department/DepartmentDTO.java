@@ -16,9 +16,4 @@ public class DepartmentDTO {
         @NotBlank
         private String name;
 
-        public DepartmentDTO(Department department) {
-                this.id = department.getId();
-                this.name = department.getName();
-        }
-
 }

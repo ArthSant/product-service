@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import stock.product.service.models.dto.department.DepartmentDTO;
 
 @Entity
 @AllArgsConstructor
@@ -19,9 +18,4 @@ public class Department {
     private Long id;
     @Column(length = 80, unique = true)
     private String name;
-
-    public Department(DepartmentDTO dto) {
-        this.name = dto.getName();
-    }
-
 }

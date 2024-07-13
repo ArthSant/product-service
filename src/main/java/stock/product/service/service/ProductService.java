@@ -21,8 +21,10 @@ public class ProductService {
 
     @Transactional
     public void saveProduct(ProductDTO dto) {
-        Department department = departmentRepository.findByName(dto.getDepartment()).orElse(null);
-        productRepository.save(new Product(dto, department));
+         Department department = departmentRepository.findByName(dto.getDepartment()).orElse(null);
+         Product product = mapper.map(dto, Product.class);
+         product.setDepartment(department);
+        productRepository.save(product);
     }
 
     public ProductDetailsDTO findByName(String name) {
