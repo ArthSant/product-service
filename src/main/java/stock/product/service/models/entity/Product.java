@@ -35,6 +35,7 @@ public class Product {
     public Product(ProductDTO dto, Department department) {
         this.department = department;
         this.name = dto.getName();
+        this.quantity = dto.getQuantity();
     }
 
 }

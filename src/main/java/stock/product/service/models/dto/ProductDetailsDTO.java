@@ -1,4 +1,4 @@
-package stock.product.service.models.dto.product;
+package stock.product.service.models.dto;
 
 
 import lombok.AllArgsConstructor;
@@ -11,10 +11,10 @@ import stock.product.service.models.dto.department.DepartmentDTO;
 @NoArgsConstructor
 @Getter
 @Setter
-public class ProductDTO {
-       private Long id;
-       private String name;
-       private String department;
-       private Integer quantity;
+public class ProductDetailsDTO {
+    private Long id;
+    private String name;
+    private DepartmentDTO department;
+    private int quantity;
 
 }
