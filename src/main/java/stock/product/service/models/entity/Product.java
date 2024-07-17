@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import stock.product.service.models.dto.product.ProductDTO;
 
 @Entity
 @Table(name = "products")
