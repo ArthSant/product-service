@@ -2,9 +2,8 @@ package stock.product.service.service;
 
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
-import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-import stock.product.service.models.dto.ProductDetailsDTO;
+import stock.product.service.models.dto.product.ProductDetailsDTO;
 import stock.product.service.models.dto.product.ProductDTO;
 import stock.product.service.models.entity.Department;
 import stock.product.service.models.entity.Product;

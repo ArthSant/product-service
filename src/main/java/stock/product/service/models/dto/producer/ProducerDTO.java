@@ -1,20 +1,17 @@
-package stock.product.service.models.dto;
+package stock.product.service.models.dto.producer;
 
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import stock.product.service.models.dto.department.DepartmentDTO;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class ProductDetailsDTO {
+public class ProducerDTO {
     private Long id;
     private String name;
-    private DepartmentDTO department;
-    private int quantity;
-
+    private String cnpj;
 }

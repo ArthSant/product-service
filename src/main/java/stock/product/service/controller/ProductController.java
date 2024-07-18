@@ -4,9 +4,8 @@ package stock.product.service.controller;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import stock.product.service.models.dto.ProductDetailsDTO;
+import stock.product.service.models.dto.product.ProductDetailsDTO;
 import stock.product.service.models.dto.product.ProductDTO;
-import stock.product.service.models.entity.Product;
 import stock.product.service.service.ProductService;
 
 @RestController
