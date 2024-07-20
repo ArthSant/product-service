@@ -16,5 +16,6 @@ public class ProductDTO {
        private String name;
        private String department;
        private Integer quantity;
+       private String producerCnpj;
 
 }

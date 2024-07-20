@@ -20,9 +20,10 @@ public class ProducerService {
 
 
     @Transactional
-    public void registerProducer(ProducerDTO dto) {
+    public Producer registerProducer(ProducerDTO dto) {
         Producer producer = mapper.map(dto, Producer.class);
         producerRepository.save(producer);
+      return producer;
     }
 
     public ProducerDTO findByCnpj(String cnpj) {

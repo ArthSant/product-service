@@ -17,13 +17,16 @@ public class DepartmentService {
     private final Mapper mapper;
 
     @Transactional
-    public void createDepartment(DepartmentDTO dto) {
+    public Department createDepartment(DepartmentDTO dto) {
         Department department = mapper.map(dto, Department.class);
         departmentRepository.save(department);
+      return department;
    }
 
    public List<DepartmentDTO> getAllDepartments() {
         List<Department> departmentList = departmentRepository.findAll();
        return mapper.mapList(departmentList, DepartmentDTO.class);
    }
+
+
 }
