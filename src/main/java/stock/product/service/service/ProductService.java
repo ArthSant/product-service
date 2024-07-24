@@ -1,5 +1,6 @@
 package stock.product.service.service;
 
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -27,7 +28,7 @@ public class ProductService {
     }
 
     public ProductDetailsDTO findByName(String name) {
-        Product product = productRepository.findByName(name).orElseThrow();
+        Product product = productRepository.findByName(name).orElseThrow(EntityNotFoundException::new);
         return mapper.map(product,ProductDetailsDTO.class);
     }
 
