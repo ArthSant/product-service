@@ -23,6 +23,11 @@ public class ProducerController {
        return ResponseEntity.status(HttpStatus.CREATED).build();
    }
 
+    @GetMapping("{cnpj}")
+    public ResponseEntity<ProducerDTO> getProducer(@PathVariable String cnpj) {
+       return ResponseEntity.ok(producerService.findByCnpj(cnpj));
+    }
+
    @GetMapping
    public ResponseEntity<List<ProducerDTO>> getAllProducers() {
        return ResponseEntity.ok(producerService.getAll());
