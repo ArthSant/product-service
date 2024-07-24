@@ -21,11 +21,11 @@ public class Product {
     @Column(length = 80)
     private String name;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(referencedColumnName = "name")
     private Department department;
-
-    @OneToOne
+    
+    @ManyToOne
     @JoinColumn(referencedColumnName = "cnpj")
     private Producer producer;
 

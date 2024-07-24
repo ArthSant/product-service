@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -22,5 +24,8 @@ public class Producer {
 
     @Column(unique = true, length = 18)
     private String cnpj;
+
+    @OneToMany(mappedBy = "producer", cascade = CascadeType.ALL)
+    private List<Product> productList;
 
 }
